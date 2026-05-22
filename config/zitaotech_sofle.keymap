@@ -58,6 +58,24 @@
 
 / {
     behaviors {
+        wxmod: tap_dance_wxmod {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&totapwxinputbar>, <&totapwxinsentmsg>;
+        };
+    };
+
+    behaviors {
+        qqmod: tap_dance_qqmod {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&totapqqinputbar>, <&totapqqsentmsg>;
+        };
+    };
+
+    behaviors {
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -84,11 +102,134 @@
         };
     };
 
-    behaviors {
-        BLE_encoder: BLE_encoder {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&bt BT_NXT>, <&bt BT_PRV>;
+    macros {
+        //上滑关闭app
+        tocloseapp: zed_em_closeapp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp F4>,<&macro_tap &kp R>,<&macro_release &kp F4>;
+        }; 
+        //返回桌面
+        gohome: zed_em_gohome {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LGUI>,<&macro_tap &kp H>,<&macro_release &kp LGUI>;
+        };
+        //手机解锁
+        loginpwd: macros_loginpwd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp ENTER &kp SPACE &kp N0 &kp N9 &kp N1 &kp N1 &kp ENTER>;
+        };
+        //向上滑动
+        toscrollup: zed_em_toscrollup {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL>,<&macro_tap &kp F3>,<&macro_release &kp LCTRL>;
+        };
+        //向下滑动
+        toscrolldown: zed_em_toscrolldown {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp F4>,<&macro_tap &kp SPACE>,<&macro_release &kp F4>;
+        };
+        //向左滑动
+        toscrollleft: zed_em_toscrollleft {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp F1>,<&macro_tap &kp SPACE>,<&macro_release &kp F1>;
+        };
+        //向右滑动
+        toscrollright: zed_em_toscrollright {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp F2>,<&macro_tap &kp SPACE>,<&macro_release &kp F2>;
+        };
+        //点击第一栏
+        totapfirst: zed_em_totapfirst {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp F8>,<&macro_tap &kp SPACE>,<&macro_release &kp F8>;
+        };
+        //点击第二栏
+        totapsecond: zed_em_totapsecond {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp F10>,<&macro_tap &kp SPACE>,<&macro_release &kp F10>;
+        };
+        //点击第三栏
+        totapthird: zed_em_totapthird {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp F9>,<&macro_tap &kp SPACE>,<&macro_release &kp F9>;
+        };
+        //点击第四栏
+        totapforth: zed_em_totapforth {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp F11>,<&macro_tap &kp SPACE>,<&macro_release &kp F11>;
+        };
+        //点击中间栏
+        totapmiddle: zed_em_totapmiddle {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LGUI>,<&macro_tap &kp N3>,<&macro_release &kp LGUI>;
+        };
+        //读微信最新的信息
+        toreadwxmsg: zed_em_toreadwxmsg {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp F5>,<&macro_tap &kp SPACE>,<&macro_release &kp F5>;
+        };
+        //读微信群更多的信息
+        toreadmorewxmsg: zed_em_toreadmorewxmsg {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp F6>,<&macro_tap &kp SPACE>,<&macro_release &kp F6>;
+        };
+        //下拉控制栏
+        torolltoolpanel: zed_em_torolltoolpanel {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp F7>,<&macro_tap &kp SPACE>,<&macro_release &kp F7>;
+        };
+        //下拉通知栏
+        torollmsgpanel: zed_em_torollmsgpanel {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LGUI>,<&macro_tap &kp N>,<&macro_release &kp LGUI>;
+        };
+        //点击微信文字输入框
+        totapwxinputbar: zed_em_totapwxinputbar {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LGUI>,<&macro_tap &kp ENTER &to DEFAULT>,<&macro_release &kp LGUI>;
+        };
+        //点击微信文字发送
+        totapwxinsentmsg: zed_em_totapwxinsentmsg {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LGUI>,<&macro_tap &kp RSHFT>,<&macro_release &kp LGUI>;
+        };
+        //点击QQ文字输入框
+        totapqqinputbar: zed_em_totapqqinputbar {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LGUI>,<&macro_tap &kp BSPC &to DEFAULT>,<&macro_release &kp LGUI>;
+        };
+        //点击QQ文字发送
+        totapqqsentmsg: zed_em_totapqqsentmsg {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LGUI>,<&macro_tap &kp LSHFT>,<&macro_release &kp LGUI>;
+        };
+        //切换设备0
+        tobt0: zed_em_tobt0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <80>;
+            tap-ms = <200>;
+            bindings = <&macro_tap &bt BT_SEL 0>,<&macro_tap &kp SPACE &kp SPACE &kp N0 &kp N9 &kp N1 &kp N1 &kp ENTER>;
         };
     };
 
@@ -98,55 +239,35 @@
          default_layer {
             display-name = "QWERTY";
            bindings = <
-&kp ESC   &kp N1   &kp N2     &kp N3   &kp N4    &kp N5    &kp C_MUTE                   &kp C_MUTE                     &kp N6      &kp N7      &kp N8    &kp N9    &kp N0   &kp BSPC            
-&kp TAB   &kp Q    &kp W      &kp E    &kp R     &kp T                                                                 &kp Y       &kp U       &kp I     &kp O     &kp P    &kp ENTER
-&kp CAPS  &kp A    &kp S      &kp D    &kp F     &kp G     &mkp LCLK                    &mkp LCLK                      &kp H       &kp J       &kp K     &kp L     &kp SEMI &kp BSLH
-&kp LSHFT &kp Z    &kp X      &kp C    &kp V     &kp B     &kp PG_DN  &kp PG_UP         &mt  LBRC LBKT  &mt RBRC RBKT  &kp N       &kp M       &kp COMMA &kp DOT   &kp FSLH &kp EQUAL
-                   &kp LCTRL  &kp LGUI &kp LALT  &kp SPACE &mo 1                                        &mo 1          &kp SPACE   &mo 2       &kp GRAVE    &kp MINUS
-           >;
-           sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LEFT RIGHT>;
+&kp GRAVE   &kp N1   &kp N2     &kp N3     &kp N4          &kp N5          &tobt0                                &bt BT_SEL 1                    &kp N6             &kp N7      &kp N8     &kp N9    &kp N0     &kp ESC
+&kp CAPS    &kp Q    &kp W      &kp E      &kp R           &kp T                                                                                 &kp Y              &kp U       &kp I      &kp O     &kp P      &kp DEL
+&kp TAB     &kp A    &kp S      &kp D      &kp F           &kp G           &mkp LCLK                             &mkp LCLK                       &kp H              &kp J       &kp K      &kp L     &kp SEMI   &kp SQT
+&kp LSHFT   &kp Z    &kp X      &kp C      &kp V           &kp B           &mkp LCLK    &mkp RCLK                &wxmod          &qqmod          &kp N              &kp M       &kp COMMA  &kp DOT   &kp FSLH   &kp RSHFT
+                                &kp LCTRL  &kp LALT        &kp ENTER       &kp SPACE    &sl 1                    &sl 1           &kp SPACE       &kp BSPC           &kp LGUI    &kp RCTRL
+           >; 
+           sensor-bindings = <&inc_dec_kp K_VOL_DN K_VOL_UP &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-
-        lower_layer {
-            display-name = "LOWER";
+        func_layer {
+            display-name = "FUNC";
             bindings = <
-&kp GRAVE   &kp F1    &kp F2     &kp F3    &kp F4    &kp F5           &bt BT_CLR                   &kp C_MUTE             &kp F6    &kp F7   &kp F9     &kp F10   &kp MINUS  &kp DEL            
-&kp TAB     &trans    &kp UP     &trans    &trans    &out OUT_TOG                                                         &kp F11   &kp N7   &kp N8     &kp N9    &kp HOME   &kp ENTER
-&kp CAPS    &kp LEFT  &kp DOWN   &kp RIGHT &trans    &trans           &mkp RCLK                    &mkp RCLK              &kp F12   &kp N4   &kp N5     &kp N6    &kp QMARK  &kp PIPE
-&kp LSHFT   &trans    &trans     &trans    &trans    &rgb_ug RGB_TOG  &trans     &trans            &bl BL_DEC  &bl BL_INC &trans    &kp N1   &kp N2     &kp N3    &kp UNDER  &kp PLUS
-                      &BOT       &kp LGUI  &kp LALT  &kp SPACE        &mo 1                                               &mo 1     &kp N0   &to 3      &kp DOT   &BOT 
+&trans        &kp F1        &kp F2     &kp F3     &kp F4          &kp F5           &BOT                           &BOT                            &kp F6     &kp F7       &kp F8     &kp LBKT  &kp RBKT    &kp MINUS
+&kp CAPS      &kp LA(F4)    &kp LC(W)  &trans     &kp LC(R)       &kp LC(T)                                                                       &none      &trans       &trans     &trans    &trans      &kp EQUAL
+&kp TAB       &kp LC(A)     &trans     &trans     &trans          &trans           &mkp LCLK                      &mkp LCLK                       &trans     &trans       &trans     &trans    &trans      &kp BACKSLASH
+&kp LSHFT     &kp LC(Z)     &kp LC(X)  &kp LC(C)  &kp LC(V)       &trans           &trans         &trans          &trans          &trans          &trans     &kp LC(M)    &trans     &trans    &trans      &kp RSHFT
+                                       &trans     &trans          &trans           &trans         &kp LGUI        &kp LGUI        &trans          &trans     &trans       &trans
             >;
-            sensor-bindings = <&BLE_encoder &inc_dec_kp UP DOWN>;
+            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
         };
-        raise_layer {
-            display-name = "RAISE";
-            bindings = <
-&kp GRAVE   &kp F1    &kp F2     &kp F3    &kp F4    &kp F5           &bt BT_CLR                      &kp C_MUTE       &none      &none     &none     &kp UP    &none      &kp BSPC            
-&kp TAB     &trans    &kp UP     &trans    &trans    &out OUT_TOG                                                      &none      &none     &kp LEFT  &kp DOWN  &kp RIGHT  &none
-&kp CAPS    &kp LEFT  &kp DOWN   &kp RIGHT &trans    &trans           &mkp RCLK                       &none            &mkp LCLK  &mkp RCLK &none     &none     &none      &none
-&kp LSHFT   &trans    &trans     &trans    &trans    &rgb_ug RGB_TOG  &trans     &trans               &none  &none     &none      &none     &none     &none     &none      &none
-                      &none      &kp LGUI  &kp LALT  &kp SPACE        &mo 1                                  &mo 1     &mkp MB2   &none     &none     &none
-            >;
-        }; 
+
         MOUSE_layer {
             display-name = "MOUSE";
             bindings = <
-&kp ESC   &kp N1    &kp N2     &kp N3   &kp N4   &kp N5     &bt BT_CLR                       &kp C_MUTE       &none      &none      &none   &none         &none  &kp BSPC            
-&kp TAB   &kp Q     &kp W      &kp E    &kp R    &kp T                                                        &none      &mkp MB3   &none   &none         &none  &none
-&kp CAPS  &kp A     &kp S      &kp D    &kp F    &kp G      &mkp LCLK                        &mkp LCLK        &none      &mkp LCLK  &none   &none         &none  &none
-&kp LSHFT &kp Z     &kp X      &kp C    &kp V    &kp B      &msc SCRL_DOWN   &msc SCRL_UP    &none  &none     &none      &mkp RCLK  &none   &msc SCRL_UP  &none  &none
-                    &kp LCTRL  &kp LALT &none    &kp SPACE  &to 0                                   &to 0     &kp SPACE  &to 0      &none   &msc SCRL_DOWN
-            >;
-        };
-        RES_layer { 
-            display-name = "RESERVE";
-            bindings = <
-&none     &none     &none      &none    &none    &none   &none                        &none            &none   &none  &none   &none  &none  &none            
-&none     &none     &none      &none    &none    &none                                                 &none   &none  &none   &none  &none  &none
-&none     &none     &none      &none    &none    &none   &none                        &none            &none   &none  &none   &none  &none  &none
-&none     &none     &none      &none    &none    &none   &none   &none                &none  &none     &none   &none  &none   &none  &none  &none
-                    &none      &none    &none    &none   &none                                         &none   &none  &none   &none  &none
+&kp LG(X)         &kp LG(S)       &kp LG(T)         &kp LG(R)      &kp LG(Z)        &kp LG(A)      &tobt0                  &bt BT_SEL 1                      &totapfirst        &totapsecond        &totapmiddle      &totapthird        &totapforth     &trans
+&kp CAPS          &kp LA(F4)      &kp LC(W)         &kp LG(E)      &kp LC(R)        &kp LC(T)                                                                &mkp LCLK          &toreadwxmsg        &toscrollleft     &torolltoolpanel   &trans          &trans
+&kp LA(LEFT)      &kp LC(A)       &trans            &kp LG(D)      &trans           &trans         &mkp LCLK               &mkp LCLK                         &kp K_BACK         &toreadmorewxmsg    &toscrollright    &torollmsgpanel    &trans          &trans
+&kp LA(RIGHT)     &kp LC(Z)       &kp LC(X)         &kp LC(C)      &kp LC(V)        &trans         &trans      &trans      &wxmod         &qqmod             &kp ESC            &tocloseapp         &gohome           &trans             &trans          &trans
+                                                    &trans         &trans           &trans         &trans      &mkp LCLK   &toscrollup    &toscrolldown      &trans             &trans              &trans
             >;
         };
     };
