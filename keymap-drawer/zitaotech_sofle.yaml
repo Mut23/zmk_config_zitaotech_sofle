@@ -68,139 +68,139 @@ layers:
   - LGUI
   - RCTRL
   LOWER:
-  - '`'
+  - {t: ▽, type: trans}
   - F1
   - F2
   - F3
   - F4
   - F5
-  - BT CLR
-  - MUTE
+  - '&bootloader'
+  - '&bootloader'
   - F6
   - F7
-  - F9
-  - F10
+  - F8
+  - '['
+  - ']'
   - '-'
-  - DEL
-  - TAB
-  - {t: ▽, type: trans}
-  - UP
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - OUT TOG
-  - F11
-  - '7'
-  - '8'
-  - '9'
-  - HOME
-  - ENTER
   - CAPS
-  - LEFT
-  - DOWN
-  - RIGHT
+  - Alt+F4
+  - Ctl+W
+  - {t: ▽, type: trans}
+  - Ctl+R
+  - Ctl+T
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mkp RCLK'
-  - '&mkp RCLK'
-  - F12
-  - '4'
-  - '5'
-  - '6'
-  - '?'
-  - '|'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '='
+  - TAB
+  - Ctl+A
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&mkp LCLK'
+  - '&mkp LCLK'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - \
   - LSHFT
+  - Ctl+Z
+  - Ctl+X
+  - Ctl+C
+  - Ctl+V
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - RGB TOG
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&bl BL_DEC'
-  - '&bl BL_INC'
+  - Ctl+M
   - {t: ▽, type: trans}
-  - '1'
-  - '2'
-  - '3'
-  - _
-  - +
-  - '&bootloader'
-  - LGUI
-  - LALT
-  - SPACE
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - RSHFT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: LOWER, type: held}
   - LOWER
-  - '0'
-  - {t: MOUSE, h: toggle}
-  - .
-  - '&bootloader'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   RAISE:
-  - '`'
+  - {t: ▽, type: trans}
   - F1
   - F2
   - F3
   - F4
   - F5
-  - BT CLR
-  - MUTE
-  - ''
-  - ''
-  - ''
-  - UP
-  - ''
-  - BSPC
-  - TAB
-  - {t: ▽, type: trans}
-  - UP
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - OUT TOG
-  - ''
-  - ''
-  - LEFT
-  - DOWN
-  - RIGHT
-  - ''
+  - '&bootloader'
+  - '&bootloader'
+  - F6
+  - F7
+  - F8
+  - '['
+  - ']'
+  - '-'
   - CAPS
-  - LEFT
-  - DOWN
-  - RIGHT
+  - Alt+F4
+  - Ctl+W
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&mkp RCLK'
+  - Ctl+R
+  - Ctl+T
   - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '='
+  - TAB
+  - Ctl+A
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - '&mkp LCLK'
-  - '&mkp RCLK'
-  - ''
-  - ''
-  - ''
-  - ''
+  - '&mkp LCLK'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - \
   - LSHFT
+  - Ctl+Z
+  - Ctl+X
+  - Ctl+C
+  - Ctl+V
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - RGB TOG
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - LGUI
-  - LALT
-  - SPACE
+  - Ctl+M
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - RSHFT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - LOWER
   - LOWER
-  - '&mkp MB2'
-  - ''
-  - ''
-  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   MOUSE:
   - Gui+X
   - Gui+S
