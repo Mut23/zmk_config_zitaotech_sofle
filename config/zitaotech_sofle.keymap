@@ -189,6 +189,38 @@
             #binding-cells = <0>;
             bindings = <&macro_press &kp LGUI>,<&macro_tap &kp N>,<&macro_release &kp LGUI>;
         };
+        //点击微信文字输入框
+        totapwxinputbar: zed_em_totapwxinputbar {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LGUI>,<&macro_tap &kp ENTER>,<&macro_release &kp LGUI>;
+        };
+        //点击微信文字发送
+        totapwxinsentmsg: zed_em_totapwxinsentmsg {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LGUI>,<&macro_tap &kp RSHFT>,<&macro_release &kp LGUI>;
+        };
+        //点击QQ文字输入框
+        totapqqinputbar: zed_em_totapqqinputbar {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LGUI>,<&macro_tap &kp BSPC>,<&macro_release &kp LGUI>;
+        };
+        //点击QQ文字发送
+        totapqqsentmsg: zed_em_totapqqsentmsg {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LGUI>,<&macro_tap &kp LSHFT>,<&macro_release &kp LGUI>;
+        };
+        //切换设备0
+        tobt0: zed_em_tobt0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <80>;
+            tap-ms = <200>;
+            bindings = <&macro_tap &bt BT_SEL 0>,<&macro_tap &kp SPACE &kp SPACE &kp N0 &kp N9 &kp N1 &kp N1 &kp ENTER>;
+        };
 };
 
     keymap {
