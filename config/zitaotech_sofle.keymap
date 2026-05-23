@@ -56,40 +56,6 @@
 };
 
 / {
-    behaviors {
-        td0: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <400>;
-            bindings = <&mkp LCLK>, <&bt BT_CLR>;
-        };
-    };
-    behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <500>;
-            bindings = <&kp &kp>;
-        };
-    };
-
-    behaviors {
-         sp_sc: behavior_spacescroll {
-           compatible = "zmk,behavior-hold-tap";
-           #binding-cells = <2>;
-           flavor = "tap-preferred";     /* 单击优先 */
-           tapping-term-ms = <200>;       /* 长按阈值 */
-           bindings = <&none &kp>;        /* hold=none, tap=space */
-        };
-    };
-
-    behaviors {
-        BLE_encoder: BLE_encoder {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&bt BT_NXT>, <&bt BT_PRV>;
-        };
-    };
 
     macros {
         //上滑关闭app
@@ -219,6 +185,41 @@
             wait-ms = <80>;
             tap-ms = <200>;
             bindings = <&macro_tap &bt BT_SEL 0>,<&macro_tap &kp SPACE &kp SPACE &kp N0 &kp N9 &kp N1 &kp N1 &kp ENTER>;
+        };
+    };
+
+    behaviors {
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&mkp LCLK>, <&bt BT_CLR>;
+        };
+    };
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <500>;
+            bindings = <&kp &kp>;
+        };
+    };
+
+    behaviors {
+         sp_sc: behavior_spacescroll {
+           compatible = "zmk,behavior-hold-tap";
+           #binding-cells = <2>;
+           flavor = "tap-preferred";     /* 单击优先 */
+           tapping-term-ms = <200>;       /* 长按阈值 */
+           bindings = <&none &kp>;        /* hold=none, tap=space */
+        };
+    };
+
+    behaviors {
+        BLE_encoder: BLE_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&bt BT_NXT>, <&bt BT_PRV>;
         };
     };
 
