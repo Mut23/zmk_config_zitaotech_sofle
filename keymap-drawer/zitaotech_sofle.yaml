@@ -1,21 +1,21 @@
 layout: {zmk_keyboard: zitaotech_sofle}
 layers:
   QWERTY:
-  - ESC
+  - '`'
   - '1'
   - '2'
   - '3'
   - '4'
   - '5'
-  - MUTE
-  - MUTE
+  - '&tobt0'
+  - {t: BT, h: '1'}
   - '6'
   - '7'
   - '8'
   - '9'
   - '0'
-  - BSPC
-  - TAB
+  - ESC
+  - CAPS
   - Q
   - W
   - E
@@ -26,8 +26,8 @@ layers:
   - I
   - O
   - P
-  - ENTER
-  - CAPS
+  - DEL
+  - TAB
   - A
   - S
   - D
@@ -40,231 +40,164 @@ layers:
   - K
   - L
   - ;
-  - \
+  - ''''
   - LSHFT
   - Z
   - X
   - C
   - V
   - B
-  - PG DN
-  - PG UP
-  - {t: '[', h: '{'}
-  - {t: ']', h: '}'}
+  - '&mkp LCLK'
+  - '&mkp RCLK'
+  - '&wxmod'
+  - '&qqmod'
   - N
   - M
   - ','
   - .
   - /
-  - '='
+  - RSHFT
   - LCTRL
-  - LGUI
   - LALT
+  - ENTER
   - SPACE
-  - LOWER
-  - LOWER
+  - {t: FUNC, h: sticky}
+  - {t: FUNC, h: sticky}
   - SPACE
-  - RAISE
-  - '`'
-  - '-'
-  LOWER:
-  - '`'
+  - BSPC
+  - LGUI
+  - RCTRL
+  FUNC:
+  - {t: ▽, type: trans}
   - F1
   - F2
   - F3
   - F4
   - F5
-  - BT CLR
-  - MUTE
+  - '&bootloader'
+  - '&bootloader'
   - F6
   - F7
-  - F9
-  - F10
+  - F8
+  - '['
+  - ']'
   - '-'
-  - DEL
-  - TAB
-  - {t: ▽, type: trans}
-  - UP
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - OUT TOG
-  - F11
-  - '7'
-  - '8'
-  - '9'
-  - HOME
-  - ENTER
   - CAPS
-  - LEFT
-  - DOWN
-  - RIGHT
+  - Alt+F4
+  - Ctl+W
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&mkp RCLK'
-  - '&mkp RCLK'
-  - F12
-  - '4'
-  - '5'
-  - '6'
-  - '?'
-  - '|'
-  - LSHFT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - RGB TOG
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&bl BL_DEC'
-  - '&bl BL_INC'
-  - {t: ▽, type: trans}
-  - '1'
-  - '2'
-  - '3'
-  - _
-  - +
-  - '&bootloader'
-  - LGUI
-  - LALT
-  - SPACE
-  - {t: LOWER, type: held}
-  - LOWER
-  - '0'
-  - {t: MOUSE, h: toggle}
-  - .
-  - '&bootloader'
-  RAISE:
-  - '`'
-  - F1
-  - F2
-  - F3
-  - F4
-  - F5
-  - BT CLR
-  - MUTE
+  - Ctl+R
+  - Ctl+T
   - ''
-  - ''
-  - ''
-  - UP
-  - ''
-  - BSPC
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '='
   - TAB
-  - {t: ▽, type: trans}
-  - UP
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - OUT TOG
-  - ''
-  - ''
-  - LEFT
-  - DOWN
-  - RIGHT
-  - ''
-  - CAPS
-  - LEFT
-  - DOWN
-  - RIGHT
+  - Ctl+A
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mkp RCLK'
-  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - '&mkp LCLK'
-  - '&mkp RCLK'
-  - ''
-  - ''
-  - ''
-  - ''
+  - '&mkp LCLK'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - \
   - LSHFT
+  - Ctl+Z
+  - Ctl+X
+  - Ctl+C
+  - Ctl+V
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - RGB TOG
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - Ctl+M
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - RSHFT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: LGUI, type: held}
   - LGUI
-  - LALT
-  - SPACE
-  - LOWER
-  - LOWER
-  - '&mkp MB2'
-  - {type: held}
-  - ''
-  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   MOUSE:
-  - ESC
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - '5'
-  - BT CLR
-  - MUTE
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - BSPC
-  - TAB
-  - Q
-  - W
-  - E
-  - R
-  - T
-  - ''
-  - '&mkp MB3'
-  - ''
-  - ''
-  - ''
-  - ''
+  - Gui+X
+  - Gui+S
+  - Gui+T
+  - Gui+R
+  - Gui+Z
+  - Gui+A
+  - '&tobt0'
+  - {t: BT, h: '1'}
+  - '&totapfirst'
+  - '&totapsecond'
+  - '&totapmiddle'
+  - '&totapthird'
+  - '&totapforth'
+  - {t: ▽, type: trans}
   - CAPS
-  - A
-  - S
-  - D
-  - F
-  - G
+  - Alt+F4
+  - Ctl+W
+  - Gui+E
+  - Ctl+R
+  - Ctl+T
+  - '&mkp LCLK'
+  - '&toreadwxmsg'
+  - '&toscrollleft'
+  - '&torolltoolpanel'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Alt+LEFT
+  - Ctl+A
+  - {t: ▽, type: trans}
+  - Gui+D
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - '&mkp LCLK'
   - '&mkp LCLK'
-  - ''
+  - BACK
+  - '&toreadmorewxmsg'
+  - '&toscrollright'
+  - '&torollmsgpanel'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Alt+RIGHT
+  - Ctl+Z
+  - Ctl+X
+  - Ctl+C
+  - Ctl+V
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&wxmod'
+  - '&qqmod'
+  - ESC
+  - '&tocloseapp'
+  - '&gohome'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - '&mkp LCLK'
-  - ''
-  - ''
-  - ''
-  - ''
-  - LSHFT
-  - Z
-  - X
-  - C
-  - V
-  - B
-  - '&msc SCRL_DOWN'
-  - '&msc SCRL_UP'
-  - ''
-  - ''
-  - ''
-  - '&mkp RCLK'
-  - ''
-  - '&msc SCRL_UP'
-  - ''
-  - ''
-  - LCTRL
-  - LALT
-  - ''
-  - SPACE
-  - {t: QWERTY, h: toggle}
-  - {t: QWERTY, h: toggle}
-  - SPACE
-  - {t: QWERTY, h: toggle}
-  - ''
-  - '&msc SCRL_DOWN'
+  - '&toscrollup'
+  - '&toscrolldown'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
