@@ -61,79 +61,146 @@ layers:
   - LALT
   - ENTER
   - SPACE
-  - {t: FUNC, h: sticky}
-  - {t: FUNC, h: sticky}
+  - LOWER
+  - LOWER
   - SPACE
   - BSPC
   - LGUI
   - RCTRL
-  FUNC:
-  - {t: ▽, type: trans}
+  LOWER:
+  - '`'
   - F1
   - F2
   - F3
   - F4
   - F5
-  - '&bootloader'
-  - '&bootloader'
+  - BT CLR
+  - MUTE
   - F6
   - F7
-  - F8
-  - '['
-  - ']'
+  - F9
+  - F10
   - '-'
-  - CAPS
-  - Alt+F4
-  - Ctl+W
-  - {t: ▽, type: trans}
-  - Ctl+R
-  - Ctl+T
-  - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '='
+  - DEL
   - TAB
-  - Ctl+A
+  - {t: ▽, type: trans}
+  - UP
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - OUT TOG
+  - F11
+  - '7'
+  - '8'
+  - '9'
+  - HOME
+  - ENTER
+  - CAPS
+  - LEFT
+  - DOWN
+  - RIGHT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mkp LCLK'
-  - '&mkp LCLK'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - \
+  - '&mkp RCLK'
+  - '&mkp RCLK'
+  - F12
+  - '4'
+  - '5'
+  - '6'
+  - '?'
+  - '|'
   - LSHFT
-  - Ctl+Z
-  - Ctl+X
-  - Ctl+C
-  - Ctl+V
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - RGB TOG
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Ctl+M
+  - '&bl BL_DEC'
+  - '&bl BL_INC'
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - RSHFT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: LGUI, type: held}
+  - '1'
+  - '2'
+  - '3'
+  - _
+  - +
+  - '&bootloader'
   - LGUI
+  - LALT
+  - SPACE
+  - {t: LOWER, type: held}
+  - LOWER
+  - '0'
+  - {t: MOUSE, h: toggle}
+  - .
+  - '&bootloader'
+  RAISE:
+  - '`'
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - BT CLR
+  - MUTE
+  - ''
+  - ''
+  - ''
+  - UP
+  - ''
+  - BSPC
+  - TAB
+  - {t: ▽, type: trans}
+  - UP
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - OUT TOG
+  - ''
+  - ''
+  - LEFT
+  - DOWN
+  - RIGHT
+  - ''
+  - CAPS
+  - LEFT
+  - DOWN
+  - RIGHT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&mkp RCLK'
+  - ''
+  - '&mkp LCLK'
+  - '&mkp RCLK'
+  - ''
+  - ''
+  - ''
+  - ''
+  - LSHFT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - RGB TOG
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - LGUI
+  - LALT
+  - SPACE
+  - LOWER
+  - LOWER
+  - '&mkp MB2'
+  - ''
+  - ''
+  - ''
   MOUSE:
   - Gui+X
   - Gui+S
