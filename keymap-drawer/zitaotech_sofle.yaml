@@ -47,10 +47,10 @@ layers:
   - C
   - V
   - B
-  - '&mkp LCLK'
-  - '&mkp RCLK'
   - '&wxmod'
   - '&qqmod'
+  - ''
+  - '&mkp RCLK'
   - N
   - M
   - ','
@@ -114,10 +114,10 @@ layers:
   - Ctl+C
   - Ctl+V
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&wxmod'
+  - '&qqmod'
+  - ''
+  - '&mkp RCLK'
   - {t: ▽, type: trans}
   - Ctl+M
   - {t: ▽, type: trans}
@@ -181,10 +181,10 @@ layers:
   - Ctl+C
   - Ctl+V
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&wxmod'
+  - '&qqmod'
+  - ''
+  - '&mkp RCLK'
   - {t: ▽, type: trans}
   - Ctl+M
   - {t: ▽, type: trans}
@@ -248,10 +248,10 @@ layers:
   - Ctl+C
   - Ctl+V
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - '&wxmod'
   - '&qqmod'
+  - ''
+  - '&mkp RCLK'
   - ESC
   - '&tocloseapp'
   - '&gohome'
