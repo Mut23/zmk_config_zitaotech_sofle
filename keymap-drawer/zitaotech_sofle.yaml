@@ -134,6 +134,73 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  RAISE:
+  - {t: ▽, type: trans}
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - '&bootloader'
+  - '&bootloader'
+  - F6
+  - F7
+  - F8
+  - '['
+  - ']'
+  - '-'
+  - CAPS
+  - Alt+F4
+  - Ctl+W
+  - {t: ▽, type: trans}
+  - Ctl+R
+  - Ctl+T
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '='
+  - TAB
+  - Ctl+A
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&mkp LCLK'
+  - '&mkp LCLK'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - \
+  - LSHFT
+  - Ctl+Z
+  - Ctl+X
+  - Ctl+C
+  - Ctl+V
+  - {t: ▽, type: trans}
+  - '&wxmod'
+  - '&qqmod'
+  - ''
+  - '&mkp RCLK'
+  - {t: ▽, type: trans}
+  - Ctl+M
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - RSHFT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - BACK
+  - LOWER
+  - LOWER
+  - BACK
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   MOUSE:
   - Gui+X
   - Gui+S
