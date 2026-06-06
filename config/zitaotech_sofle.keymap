@@ -240,7 +240,6 @@
                                        &trans     &trans          &trans           &kp K_BACK   &mo 1             &mo 1           &kp K_BACK      &trans     &trans       &trans
             >;
         };
-
         raise_layer {
             display-name = "RAISE";
             bindings = <
@@ -251,7 +250,6 @@
                                        &trans     &trans          &trans           &kp K_BACK   &mo 1             &mo 1           &kp K_BACK      &trans     &trans       &trans
             >;
         };
-
         MOUSE_layer {
             display-name = "MOUSE";
             bindings = <
