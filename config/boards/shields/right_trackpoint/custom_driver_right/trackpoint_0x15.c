@@ -377,8 +377,8 @@ static void trackpoint_work_cb(struct k_work *work) {
 
         float slow_mult = slow_key_pressed ? SLOW_KEY_MULTIPLIER : 1.0f;
 
-        float fx = dx * MOUSE_BASE_SPEED * tp_factor * exp_mult * slow_mult;
-        float fy = dy * MOUSE_BASE_SPEED * tp_factor * exp_mult * slow_mult;
+        float fx = dx * MOUSE_BASE_SPEED * tp_factor * exp_mult * slow_mult * 1.5;
+        float fy = dy * MOUSE_BASE_SPEED * tp_factor * exp_mult * slow_mult * 1.5;
 
         input_report_rel(dev, INPUT_REL_X, -(int)fx, false, K_NO_WAIT);
         input_report_rel(dev, INPUT_REL_Y, -(int)fy, true, K_NO_WAIT);
