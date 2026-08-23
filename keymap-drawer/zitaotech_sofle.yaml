@@ -68,14 +68,14 @@ layers:
   - LGUI
   - RCTRL
   LOWER:
-  - {t: ▽, type: trans}
+  - RGB TOG
   - F1
   - F2
   - F3
   - F4
   - F5
-  - '&bootloader'
-  - '&bootloader'
+  - '&bl BL_DEC'
+  - '&bl BL_INC'
   - F6
   - F7
   - F8
@@ -135,14 +135,14 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   RAISE:
-  - {t: ▽, type: trans}
+  - RGB TOG
   - F1
   - F2
   - F3
   - F4
   - F5
-  - '&bootloader'
-  - '&bootloader'
+  - '&bl BL_DEC'
+  - '&bl BL_INC'
   - F6
   - F7
   - F8
