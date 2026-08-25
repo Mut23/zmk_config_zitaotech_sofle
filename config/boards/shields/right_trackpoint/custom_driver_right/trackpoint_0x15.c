@@ -153,22 +153,6 @@ struct trackpoint_data {
 };
 
 /* ========= 指数加速计算 ========= */
-#ifdef CONFIG_TRACKPOINT_EXPONENTIAL
-#define TP_MAX_MULT 2.0f
-static inline float trackpoint_exponential_factor(int8_t dx, int8_t dy, uint32_t delta_ms) {
-    if (delta_ms == 0)
-        delta_ms = 1;
-
-    int dist = abs(dx) + abs(dy);
-    if (dist < 1)
-        return 1.0f;
-
-    float speed = (float)dist / (float)delta_ms;
-    float mult = expf(speed * 1.307357f);
-
-    return (mult > TP_MAX_MULT) ? TP_MAX_MULT : mult;
-}
-#endif
 
 /* ========= 读取数据 ========= */
 static int trackpoint_read_packet(const struct device *dev, int8_t *dx, int8_t *dy) {
@@ -195,79 +179,6 @@ static int trackpoint_read_packet(const struct device *dev, int8_t *dx, int8_t *
 }
 
 /* ========= ★ 抽象复用：滚轮单轴处理函数 ========= */
-static inline void process_scroll_axis(const struct device *dev, int8_t delta, int16_t *residue,
-                                       uint16_t input_code, int8_t dir_mult) {
-    int abs_delta = abs(delta);
-
-    // ★ 不清零，保持连续性
-    if (abs_delta <= SCROLL_DEADZONE) {
-        return;
-    }
-
-    if (abs_delta > SCROLL_INPUT_MAX) {
-        abs_delta = SCROLL_INPUT_MAX;
-    }
-
-    // ★ 非线性 divisor（更丝滑）
-    float t = (float)abs_delta / SCROLL_INPUT_MAX;
-    t = t * t;
-
-    float f_div = SCROLL_DIVISOR_SLOW - (SCROLL_DIVISOR_SLOW - SCROLL_DIVISOR_FAST) * t;
-
-    int divisor = (int)f_div;
-    if (divisor < 1)
-        divisor = 1;
-
-    *residue += (delta * dir_mult);
-
-    int16_t scroll_ticks = *residue / divisor;
-    if (scroll_ticks != 0) {
-        input_report_rel(dev, input_code, scroll_ticks, true, K_NO_WAIT);
-        *residue %= divisor;
-    }
-
-    // ★ 阻尼（关键）
-    *residue = (*residue * 3) / 4;
-}
-
-static inline void process_arrow_axis(const struct device *dev, int8_t delta, int16_t *residue,
-                                      uint16_t key_neg, uint16_t key_pos) {
-
-    int abs_delta = abs(delta);
-
-    if (abs_delta <= ARROW_DEADZONE) {
-        return;
-    }
-
-    if (abs_delta > ARROW_INPUT_MAX) {
-        abs_delta = ARROW_INPUT_MAX;
-    }
-
-    // ★ 非线性 divisor（更丝滑）
-    float t = (float)abs_delta / SCROLL_INPUT_MAX;
-    t = t * t;
-
-    float f_div = SCROLL_DIVISOR_SLOW - (SCROLL_DIVISOR_SLOW - SCROLL_DIVISOR_FAST) * t;
-
-    int divisor = (int)f_div;
-    if (divisor < 1)
-        divisor = 1;
-
-    *residue += delta; // 替换掉 dir_mult
-    int16_t arrow_ticks = *residue / divisor;
-    if (arrow_ticks != 0) {
-        uint16_t key = (arrow_ticks > 0) ? key_pos : key_neg;
-
-        // 触发 key press + release（脉冲）
-        input_report_key(dev, key, 1, true, K_NO_WAIT);
-        input_report_key(dev, key, 0, true, K_NO_WAIT);
-
-        *residue %= divisor;
-    }
-
-    // 阻尼（防止漂移）
-    *residue = (*residue * 3) / 4;
-}
 
 static void trackpoint_work_cb(struct k_work *work) {
     struct trackpoint_data *data = CONTAINER_OF(work, struct trackpoint_data, work);
@@ -377,8 +288,8 @@ static void trackpoint_work_cb(struct k_work *work) {
 
         float slow_mult = slow_key_pressed ? SLOW_KEY_MULTIPLIER : 1.0f;
 
-        float fx = dx * MOUSE_BASE_SPEED * tp_factor * exp_mult * slow_mult * 3;
-        float fy = dy * MOUSE_BASE_SPEED * tp_factor * exp_mult * slow_mult * 3;
+        float fx = dx * MOUSE_BASE_SPEED * tp_factor * exp_mult * slow_mult;
+        float fy = dy * MOUSE_BASE_SPEED * tp_factor * exp_mult * slow_mult;
 
         input_report_rel(dev, INPUT_REL_X, -(int)fx, false, K_NO_WAIT);
         input_report_rel(dev, INPUT_REL_Y, -(int)fy, true, K_NO_WAIT);
