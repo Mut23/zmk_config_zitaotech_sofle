@@ -227,7 +227,7 @@ static inline void process_scroll_axis(const struct device *dev, int8_t delta, i
     }
 
     // ★ 阻尼（关键）
-    //*residue = (*residue * 3) / 4;
+    *residue = (*residue * 3) / 4;
 }
 
 static inline void process_arrow_axis(const struct device *dev, int8_t delta, int16_t *residue,
@@ -266,7 +266,7 @@ static inline void process_arrow_axis(const struct device *dev, int8_t delta, in
     }
 
     // 阻尼（防止漂移）
-    //*residue = (*residue * 3) / 4;
+    *residue = (*residue * 3) / 4;
 }
 
 static void trackpoint_work_cb(struct k_work *work) {
@@ -377,8 +377,8 @@ static void trackpoint_work_cb(struct k_work *work) {
 
         float slow_mult = slow_key_pressed ? SLOW_KEY_MULTIPLIER : 1.0f;
 
-        float fx = dx * MOUSE_BASE_SPEED * tp_factor * exp_mult * slow_mult * 3;
-        float fy = dy * MOUSE_BASE_SPEED * tp_factor * exp_mult * slow_mult * 3;
+        float fx = dx * MOUSE_BASE_SPEED * tp_factor * exp_mult * slow_mult * 4;
+        float fy = dy * MOUSE_BASE_SPEED * tp_factor * exp_mult * slow_mult;
 
         input_report_rel(dev, INPUT_REL_X, -(int)fx, false, K_NO_WAIT);
         input_report_rel(dev, INPUT_REL_Y, -(int)fy, true, K_NO_WAIT);
