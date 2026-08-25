@@ -227,7 +227,7 @@ static inline void process_scroll_axis(const struct device *dev, int8_t delta, i
     }
 
     // ★ 阻尼（关键）
-    *residue = (*residue * 3) / 4;
+    //*residue = (*residue * 3) / 4;
 }
 
 static inline void process_arrow_axis(const struct device *dev, int8_t delta, int16_t *residue,
@@ -266,7 +266,7 @@ static inline void process_arrow_axis(const struct device *dev, int8_t delta, in
     }
 
     // 阻尼（防止漂移）
-    *residue = (*residue * 3) / 4;
+    //*residue = (*residue * 3) / 4;
 }
 
 static void trackpoint_work_cb(struct k_work *work) {
