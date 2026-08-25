@@ -74,8 +74,8 @@ layers:
   - F3
   - F4
   - F5
-  - '&bl BL_DEC'
-  - '&bl BL_INC'
+  - '&bootloader'
+  - '&bootloader'
   - F6
   - F7
   - F8
@@ -141,8 +141,8 @@ layers:
   - F3
   - F4
   - F5
-  - '&bl BL_DEC'
-  - '&bl BL_INC'
+  - '&bootloader'
+  - '&bootloader'
   - F6
   - F7
   - F8
