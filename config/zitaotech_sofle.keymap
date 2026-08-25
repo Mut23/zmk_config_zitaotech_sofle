@@ -233,7 +233,7 @@
         lower_layer {
             display-name = "LOWER";
             bindings = <
-&rgb_ug RGB_TOG        &kp F1        &kp F2     &kp F3     &kp F4          &kp F5           &bl BL_DEC                     &bl BL_INC                      &kp F6     &kp F7       &kp F8     &kp LBKT  &kp RBKT    &kp MINUS
+&rgb_ug RGB_TOG        &kp F1        &kp F2     &kp F3     &kp F4          &kp F5           &BOT                           &BOT                            &kp F6     &kp F7       &kp F8     &kp LBKT  &kp RBKT    &kp MINUS
 &kp CAPS               &kp LA(F4)    &kp LC(W)  &trans     &kp LC(R)       &kp LC(T)                                                                       &none      &trans       &trans     &trans    &trans      &kp EQUAL
 &kp TAB                &kp LC(A)     &trans     &trans     &trans          &trans           &mkp LCLK                      &mkp LCLK                       &trans     &trans       &trans     &trans    &trans      &kp BACKSLASH
 &kp LSHFT              &kp LC(Z)     &kp LC(X)  &kp LC(C)  &kp LC(V)       &trans           &wxmod       &qqmod            &none           &mkp RCLK       &trans     &kp LC(M)    &trans     &trans    &trans      &kp RSHFT
@@ -243,7 +243,7 @@
         raise_layer {
             display-name = "RAISE";
             bindings = <
-&rgb_ug RGB_TOG        &kp F1        &kp F2     &kp F3     &kp F4          &kp F5           &bl BL_DEC                     &bl BL_INC                      &kp F6     &kp F7       &kp F8     &kp LBKT  &kp RBKT    &kp MINUS
+&rgb_ug RGB_TOG        &kp F1        &kp F2     &kp F3     &kp F4          &kp F5           &BOT                           &BOT                            &kp F6     &kp F7       &kp F8     &kp LBKT  &kp RBKT    &kp MINUS
 &kp CAPS               &kp LA(F4)    &kp LC(W)  &trans     &kp LC(R)       &kp LC(T)                                                                       &none      &trans       &trans     &trans    &trans      &kp EQUAL
 &kp TAB                &kp LC(A)     &trans     &trans     &trans          &trans           &mkp LCLK                      &mkp LCLK                       &trans     &trans       &trans     &trans    &trans      &kp BACKSLASH
 &kp LSHFT              &kp LC(Z)     &kp LC(X)  &kp LC(C)  &kp LC(V)       &trans           &wxmod       &qqmod            &none           &mkp RCLK       &trans     &kp LC(M)    &trans     &trans    &trans      &kp RSHFT
